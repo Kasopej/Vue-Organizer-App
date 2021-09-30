@@ -1,22 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import MainView from '../views/main-view.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'MainView',
+    component: MainView
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/edit-todo/:id',
+    name: 'EditTodo',
+    props: r => ({ id: parseInt(r.params.id) }),
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "edit-mode" */ '../views/edit-todo.vue')
+  },
+  {
+    path: '/add-todo',
+    name: 'AddTodo',
+    component: () => import(/* webpackChunkName: "edit-mode" */ '../views/add-todo.vue')
   }
 ]
 
