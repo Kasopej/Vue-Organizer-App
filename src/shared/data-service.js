@@ -1,10 +1,3 @@
-import { todoData } from "./data";
-
-
-export const addData = (todo) => {
-    todoData.push(todo);
-}
-
 
 export const parseData = (data) => {
     if (data.length === 0) {

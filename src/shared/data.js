@@ -1,5 +1,4 @@
 export let todoData = [
-    /*
     {
         title: 'Go shopping',
         text: ['Check what I need', 'Plan my movement', 'Shop!'],
@@ -25,5 +24,4 @@ export let todoData = [
         text: ['Check what I need', 'Plan my movement', 'Shop!'],
         id: 10,
     },
-    */
 ];

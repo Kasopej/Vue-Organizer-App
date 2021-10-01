@@ -19,11 +19,11 @@ export default {
   },
 
 created() {
-  this.getTodosData();
+  this.letStoreGetData();
 },
 
 methods: {
-  ...mapActions({getTodosData: 'getData'}),
+  ...mapActions(['letStoreGetData']),
 
 },
 

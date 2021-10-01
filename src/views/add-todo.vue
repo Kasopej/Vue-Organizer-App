@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
     data() {
@@ -44,11 +44,23 @@ export default {
         },
         saveTodo(){
             this.addData(this.todo);
-            this.$router.push({name: 'MainView'})
+            if(this.error){
+                alert('The ID you entered is taken!'); return;
+            }
+            this.$router.push({name: 'MainView'});
+
         },
         cancelTodo(){
             this.$router.push({name: 'MainView'});
         },
+    },
+    watch: {
+        'todo.id': function(val){
+            if(val<1) this.todo.id = 1;
+        }
+    },
+    computed: {
+       ...mapState(['error']),
     },
 }
 </script>
