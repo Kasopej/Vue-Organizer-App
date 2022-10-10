@@ -5,11 +5,10 @@ export const parseData = (data) => {
         return '';
     }
     for (const entry of data) {
-        if (typeof entry !== 'object') {
-            console.log('Parse failed as array does not contain an object');
-            return '';
-        }
+      if (typeof entry !== "object") {
+        console.log("Parse failed as array does not contain an object");
+        return "";
+      }
     }
-    console.log("Parse successful!");
     return data;
 }
